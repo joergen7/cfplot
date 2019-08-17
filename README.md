@@ -15,6 +15,8 @@ The resulting file `cfplot` provides a command line interface to the plotting li
 
 ### Dependency Graph
 
+![2019-01-17-variant-call-varscan-gruenau-4x120-2x32-2x16-gluster4-dep](2019-01-17-variant-call-varscan-gruenau-4x120-2x32-2x16-gluster4-dep.png)
+
 ![2019-01-17-variant-call-varscan-gruenau-4x120-2x32-2x16-gluster4-dep-detail](img/2019-01-17-variant-call-varscan-gruenau-4x120-2x32-2x16-gluster4-dep-detail.png)
 
 *Detail of the dependency graph*
