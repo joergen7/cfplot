@@ -41,6 +41,15 @@ The resulting file `cfplot` provides a command line interface to the plotting li
 
 ![2019-01-17-variant-call-varscan-gruenau-4x120-2x32-2x16-gluster4-bandwidth-density](img/2019-01-17-variant-call-varscan-gruenau-4x120-2x32-2x16-gluster4-bandwidth-density.png)
 
+### Stage-in Bandwidth Density Per Compute Node
+
+![2019-01-17-variant-call-varscan-gruenau-4x120-2x32-2x16-gluster4-stage-in-bandwidth-density-node](img/2019-01-17-variant-call-varscan-gruenau-4x120-2x32-2x16-gluster4-stage-in-bandwidth-density-node.png)
+
+### Stage-out Bandwidth Density Per Compute Node
+
+![2019-01-17-variant-call-varscan-gruenau-4x120-2x32-2x16-gluster4-stage-out-bandwidth-density-node](img/2019-01-17-variant-call-varscan-gruenau-4x120-2x32-2x16-gluster4-stage-out-bandwidth-density-node.png)
+
 ### Processing Selectivity Scatter Plot
 
 ![2019-01-17-variant-call-varscan-gruenau-4x120-2x32-2x16-gluster4-selectivity](img/2019-01-17-variant-call-varscan-gruenau-4x120-2x32-2x16-gluster4-selectivity.png)
+
