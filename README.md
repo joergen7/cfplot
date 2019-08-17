@@ -9,4 +9,12 @@ A binary can be created by entering
     raco make -j 8 *.rkt
     raco exe cfplot.rkt
 
-The resulting file `cfplot` provides a command line interface to the plotting library. 
+The resulting file `cfplot` provides a command line interface to the plotting library.
+
+## Graph Types
+
+### Dependency Graph
+
+![2019-01-17-variant-call-varscan-gruenau-4x120-2x32-2x16-gluster4-dep-detail](img/2019-01-17-variant-call-varscan-gruenau-4x120-2x32-2x16-gluster4-dep-detail.png)
+
+*Detail of the dependency graph*
