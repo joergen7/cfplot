@@ -41,13 +41,25 @@ The resulting file `cfplot` provides a command line interface to the plotting li
 
 ![2019-01-17-variant-call-varscan-gruenau-4x120-2x32-2x16-gluster4-bandwidth-density](img/2019-01-17-variant-call-varscan-gruenau-4x120-2x32-2x16-gluster4-bandwidth-density.png)
 
-### Stage-in Bandwidth Density Per Compute Node
+### Stage-in Bandwidth Density per Compute Node
 
 ![2019-01-17-variant-call-varscan-gruenau-4x120-2x32-2x16-gluster4-stage-in-bandwidth-density-node](img/2019-01-17-variant-call-varscan-gruenau-4x120-2x32-2x16-gluster4-stage-in-bandwidth-density-node.png)
 
-### Stage-out Bandwidth Density Per Compute Node
+### Stage-out Bandwidth Density per Compute Node
 
 ![2019-01-17-variant-call-varscan-gruenau-4x120-2x32-2x16-gluster4-stage-out-bandwidth-density-node](img/2019-01-17-variant-call-varscan-gruenau-4x120-2x32-2x16-gluster4-stage-out-bandwidth-density-node.png)
+
+### Processing Throughput Scatter Plot
+
+![2019-01-17-variant-call-varscan-gruenau-4x120-2x32-2x16-gluster4-throughput-scatter](img/2019-01-17-variant-call-varscan-gruenau-4x120-2x32-2x16-gluster4-throughput-scatter.png)
+
+### Processing Throughput Density
+
+![2019-01-17-variant-call-varscan-gruenau-4x120-2x32-2x16-gluster4-throughput-density](img/2019-01-17-variant-call-varscan-gruenau-4x120-2x32-2x16-gluster4-throughput-density.png)
+
+### Processing Throughput Density per Compute Node
+
+![2019-01-17-variant-call-varscan-gruenau-4x120-2x32-2x16-gluster4-throughput-density-node](img/2019-01-17-variant-call-varscan-gruenau-4x120-2x32-2x16-gluster4-throughput-density-node.png)
 
 ### Processing Selectivity Scatter Plot
 
