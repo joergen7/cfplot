@@ -17,6 +17,100 @@ The resulting file `cfplot` provides a command line interface to the plotting li
 
     cfplot my-history-file.json
 
+## History JSON format
+
+Below is an example for a history file with one entry. The ellipses at the end of the history list represent the following entries. Each entry is an object with two fields: `app` and `delta`.
+
+    {
+      "history": [
+        {
+          "app": {
+            "app_id": "042913bc99e7464b8ab377a36bbe17cda963445664cf5f3d1b70e74f",
+            "arg_bind_lst": [
+              {
+                "arg_name": "idx",
+                "value": "8d851bb_idx.tar"
+              },
+              {
+                "arg_name": "fastq",
+                "value": "558b7dd_SRR576938.sra.fastq"
+              }
+            ],
+            "lambda": {
+              "arg_type_lst": [
+                {
+                  "arg_name": "idx",
+                  "arg_type": "File",
+                  "is_list": false
+                },
+                {
+                  "arg_name": "fastq",
+                  "arg_type": "File",
+                  "is_list": false
+                }
+              ],
+              "lambda_name": "bowtie-align",
+              "lang": "Bash",
+              "ret_type_lst": [
+                {
+                  "arg_name": "bam",
+                  "arg_type": "File",
+                  "is_list": false
+                }
+              ],
+              "script": "\n  bam=$fastq.bam\n  tar xf $idx\n  bowtie -S idx $fastq | samtools view -b - > $bam\n"
+            }
+          },
+          "delta": {
+            "app_id": "042913bc99e7464b8ab377a36bbe17cda963445664cf5f3d1b70e74f",
+            "result": {
+              "ret_bind_lst": [
+                {
+                  "arg_name": "bam",
+                  "value": "b70e74f_558b7dd_SRR576938.sra.fastq.bam"
+                }
+              ],
+              "stat": {
+                "node": "cf_worker@default-ubuntu-1804",
+                "run": {
+                  "duration": "178156775904",
+                  "t_start": "1545049650778968246"
+                },
+                "sched": {
+                  "duration": "178197792686",
+                  "t_start": "1545049650753821561"
+                },
+                "stage_in_lst": [
+                  {
+                    "duration": "13259112",
+                    "filename": "8d851bb_idx.tar",
+                    "size": "13373440",
+                    "t_start": "1545049650755376933"
+                  },
+                  {
+                    "duration": "9195502",
+                    "filename": "558b7dd_SRR576938.sra.fastq",
+                    "size": "1355957118",
+                    "t_start": "1545049650769217200"
+                  }
+                ],
+                "stage_out_lst": [
+                  {
+                    "duration": "10451127",
+                    "filename": "b70e74f_558b7dd_SRR576938.sra.fastq.bam",
+                    "size": "272845997",
+                    "t_start": "1545049828936511802"
+                  }
+                ]
+              },
+              "status": "ok"
+            }
+          }
+        },
+        ...
+      ]
+    }
+
 ## Graph Types
 
 ### Dependency Graph
