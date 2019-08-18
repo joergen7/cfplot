@@ -107,11 +107,11 @@
   #:prefab)
 
 (struct Result ([ret-bind-list : (Listof Bind)]
+                [node          : String]
                 [stat          : Stat])
   #:prefab)
 
-(struct Stat ([node          : String]
-              [run           : Interval]
+(struct Stat ([run           : Interval]
               [sched         : Interval]
               [stage-in-lst  : (Listof File-Interval)]
               [stage-out-lst : (Listof File-Interval)])
@@ -172,9 +172,6 @@
   (: decode-stat (-> HashTableTop Stat))
   (define (decode-stat stat)
 
-    (define node : String
-      (assert (hash-ref stat 'node) string?))
-
     (define run : Interval
       (decode-interval (assert (hash-ref stat 'run) hash?)))
 
@@ -189,10 +186,13 @@
       (for/list ([stage-out : Any (in-list (assert (hash-ref stat 'stage_out_lst) list?))])
         (decode-file-interval (assert stage-out hash?))))
 
-    (Stat node run sched stage-in-lst stage-out-lst))
+    (Stat run sched stage-in-lst stage-out-lst))
 
   (: decode-result (-> HashTableTop Result))
   (define (decode-result result)
+
+    (define node : String
+      (assert (hash-ref result 'node) string?))
 
     (define ret-bind-lst : (Listof Bind)
       (for/list ([ret-bind : Any (in-list (assert (hash-ref result 'ret_bind_lst) list?))])
@@ -201,7 +201,7 @@
     (define stat : Stat
       (decode-stat (assert (hash-ref result 'stat) hash?)))
 
-    (Result ret-bind-lst stat))
+    (Result ret-bind-lst node stat))
 
   (: decode-targ (-> HashTableTop TArg))
   (define (decode-targ targ)
@@ -402,8 +402,8 @@
                         "bla"))
            (Delta "123"
                   (Result (list (Bind "out" "blub"))
-                          (Stat "wrk@x240"
-                                (Interval 45.0 9.0)
+                          "wrk@x240"
+                          (Stat (Interval 45.0 9.0)
                                 (Interval 42.0 15.0)
                                 '()
                                 '())))))
@@ -418,8 +418,8 @@
                         "bla"))
            (Delta "abc"
                   (Result (list (Bind "z" "blub"))
-                          (Stat "wrk@alex"
-                                (Interval 35.0 9.0)
+                          "wrk@alex"
+                          (Stat (Interval 35.0 9.0)
                                 (Interval 32.0 15.0)
                                 '()
                                 '())))))

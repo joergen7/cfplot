@@ -22,9 +22,9 @@
                   Delta
                   Delta-result
                   Result
+                  Result-node
                   Result-stat
                   Stat
-                  Stat-node
                   Stat-stage-in-lst
                   Stat-run
                   Interval
@@ -69,7 +69,7 @@
       (Result-stat result))
 
     (define node : String
-      (last (string-split (Stat-node stat) "@")))
+      (last (string-split (Result-node result) "@")))
 
     (define stage-in-lst : (Listof File-Interval)
       (Stat-stage-in-lst stat))
