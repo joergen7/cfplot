@@ -64,6 +64,7 @@ Below is an example for a history file with one entry. The ellipses at the end o
           "delta": {
             "app_id": "042913bc99e7464b8ab377a36bbe17cda963445664cf5f3d1b70e74f",
             "result": {
+              "node": "cf_worker@default-ubuntu-1804",
               "ret_bind_lst": [
                 {
                   "arg_name": "bam",
@@ -71,7 +72,6 @@ Below is an example for a history file with one entry. The ellipses at the end o
                 }
               ],
               "stat": {
-                "node": "cf_worker@default-ubuntu-1804",
                 "run": {
                   "duration": "178156775904",
                   "t_start": "1545049650778968246"
@@ -159,3 +159,18 @@ Below is an example for a history file with one entry. The ellipses at the end o
 
 ![2019-01-17-variant-call-varscan-gruenau-4x120-2x32-2x16-gluster4-selectivity](img/2019-01-17-variant-call-varscan-gruenau-4x120-2x32-2x16-gluster4-selectivity.png)
 
+## System Requirements
+
+- [Racket](https://www.racket-lang.org) 7.0 or higher
+
+## Resources
+
+- [cuneiform-lang.org](https://www.cuneiform-lang.org/). Official website of the Cuneiform programming language.
+
+## Authors
+
+- Jörgen Brandt ([@joergen7](https://github.com/joergen7/)) [joergen@cuneiform-lang.org](mailto:joergen@cuneiform-lang.org)
+
+## License
+
+[Apache 2.0](https://www.apache.org/licenses/LICENSE-2.0.html)
