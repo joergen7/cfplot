@@ -19,7 +19,7 @@ The resulting file `cfplot` provides a command line interface to the plotting li
 
 ## History JSON format
 
-Below is an example for a history file with one entry. The ellipses at the end of the history list represent the following entries. Each entry is an object with two fields: `app` and `delta`.
+A history document is a JSON document with a single field `history`. The value of the `history` field is a list. Each entry in this list is an object with two fields: `app` and `delta`. The `app` field describes the task that was executed as it was scheduled to the execution engine. The `delta` field describes the result of the execution. Below is a history document with one app-delta pair. The ellipses at the end of the history list represent the following entries.
 
     {
       "history": [
@@ -110,6 +110,21 @@ Below is an example for a history file with one entry. The ellipses at the end o
         ...
       ]
     }
+
+### App Field
+
+The `app` field of a history entry describes an independent task (job, invocation, ...). An `app` is a closure of the form of a function application consisting of a function and argument bindings. An `app` object has the following fields:
+
+- `app_id` a unique string that identifies the application. This can be a hash, a UUID, or any arbitrary identifying string.
+- `lambda` an object describing the foreign function to be executed.
+- `arg_bind_lst` a list of objects that enumerate the argument bindings.
+
+### Delta Field
+
+The `delta` field is says the result of the execution.
+
+- `app_id` must match the corresponding application
+- `result` contains a `ret_bind_list` field holding the values produced by the application, a `node` field identifying the computer the application ran on, and a `stat` field holding statistics about the execution.
 
 ## Graph Types
 
