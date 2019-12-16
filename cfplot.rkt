@@ -78,6 +78,11 @@
                   Throughput-Density-Node-Data
                   throughput-density-node-data
                   plot-throughput-density-node)
+
+         (only-in "plot-throughput-density-fn.rkt"
+                  Throughput-Density-Fn-Data
+                  throughput-density-fn-data
+                  plot-throughput-density-fn)
          )
 
 
@@ -254,7 +259,18 @@
                                  throughput-density-node-file)
 
 
+   ;; Throughput density per function ----------------
 
+   (displayln "Throughput density per function ...")
+
+   (define tpf-data : Throughput-Density-Fn-Data
+     (throughput-density-fn-data h))
+
+   (define throughput-density-fn-file : String
+     (string-append prefix "-throughput-density-fn.png"))
+
+   (plot-throughput-density-fn tpf-data
+                                 throughput-density-fn-file)
 
    ))
 
